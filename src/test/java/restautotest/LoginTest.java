@@ -29,7 +29,7 @@ public class LoginTest {
 		RequestSpecification request = given();
 		
 		JSONObject requestPrams = new JSONObject();
-		requestPrams.put("name", "Raghav");
+		requestPrams.put("name", "Raghas");
 		requestPrams.put("job", "Teacher");
 		request.header("Content-Type", "application/json");
 		request.body(requestPrams.toJSONString());
