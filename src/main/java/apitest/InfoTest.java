@@ -44,7 +44,7 @@ public class InfoTest {
 	public void test3() {
 		System.out.println("Test 2 in Info Api: Code and Message should be 1004 when not login");
 		InfoHelper info = new InfoHelper();
-		String email, password;
+
 		try {
 			Response response = info.getApiResponse();
 			Assert.assertEquals(info.getStatusCode(response), 200);
