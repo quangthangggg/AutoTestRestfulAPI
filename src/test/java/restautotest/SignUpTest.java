@@ -1,19 +1,21 @@
 package restautotest;
 
 import static io.restassured.RestAssured.*;
-import static org.testng.Assert.assertThrows;
-
-import org.json.JSONObject;
 import io.restassured.response.Response;
+import org.json.JSONObject;
 import org.testng.Assert;
 
- 
-public class LogInTest extends APINeedTesting{
+public class SignUpTest extends APINeedTesting {
 	
 	public String creRequest(String... request) {
 		JSONObject req = new JSONObject();
 		req.put("email", request[0]);
 		req.put("password", request[1]);
+		req.put("re_pass", request[2]);
+		req.put("address", request[3]);
+		req.put("name", request[4]);
+		req.put("phone", request[5]);
+		req.put("avatar", request[6]);
 		return req.toString();
 	}
 	
@@ -24,8 +26,7 @@ public class LogInTest extends APINeedTesting{
 					.header("Content-Type", "application/json")
 					.body(request)
 				.when()
-					.post("api/login");
-		
+					.post("api/signup");
 		JSONObject rep = new JSONObject(response.getBody().asString());
 		this.codeResponse = Integer.parseInt(rep.get("code").toString());
 		this.messageResponse = rep.get("message").toString();
@@ -33,13 +34,18 @@ public class LogInTest extends APINeedTesting{
 	}
 
 	void test1() {
-		System.out.println("Test 1 in LogIn API: The code and message strings shall be not NULL as well as non-empty in any case:");
+		System.out.println("Test 1 in SignUp API: The code and message strings shall be not NULL as well as non-empty:");
 		
 		//Unit 1
 		try {
 			String request = this.creRequest(
-					"damanh@gmail.com"							
-					,"123456"
+					"12z@gmail.com"
+					, "123"
+					, "123"
+					, "Ha Noi"
+					, "Vanh"
+					, "1233456456"
+					, ""
 			);
 			this.callAPI(request);
 			Assert.assertNotNull(this.codeResponse);
@@ -54,7 +60,12 @@ public class LogInTest extends APINeedTesting{
 		try {
 			String request = this.creRequest(
 					"d111112@gmail.com"
-					,"123"
+					, "123"
+					, "123"
+					, "Ha Noi"
+					, "Vanh"
+					, "1233456456"
+					, ""
 			);
 			this.callAPI(request);
 			Assert.assertNotNull(this.codeResponse);
@@ -63,13 +74,25 @@ public class LogInTest extends APINeedTesting{
 		} catch (AssertionError e) {
 			System.out.println("Unit 2: Failed");
 		}
-
-	 }
-	
-	public static void main(String[] args) {
-		LoginHelper lg = new LoginHelper();
-		String body = lg.getLoginResponse("1@gmail.com", "1234");
-		System.out.println(body);
+		
+		//Unit 3
+		try {
+			String request = this.creRequest(
+					"d111119@gmail.com"
+					, "123"
+					, "123"
+					, "Ha Noi"
+					, "Vanh"
+					, "1233456456"
+					, ""
+			);
+			this.callAPI(request);
+			Assert.assertNotNull(this.codeResponse);
+			Assert.assertNotNull(this.messageResponse);
+			System.out.println("Unit 3: Passed");
+		} catch(AssertionError e) {
+			System.out.println("Unit 3: Failed");
+		}
+		
 	}
-
 }
