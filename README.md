@@ -1,4 +1,4 @@
-# AutoTestRestfulAPI
+# TESTING RESFUL API AUTOMATICALLY
 This project written by Java is OOP-project to perform automated testing restfulAPI provided 
 To make sure running correctly, we suggest to install some thing below:
  - Eclipse (IDE)
