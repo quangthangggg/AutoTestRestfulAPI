@@ -1,5 +1,13 @@
 # AutoTestRestfulAPI
 This project written by Java is OOP-project to perform automated testing restfulAPI provided 
+To make sure running correctly, we suggest to install some thing below:
+ - Eclipse (IDE)
+ - Java
+ - Maven
+and some library that you can find in maven central: https://mvnrepository.com/repos/central
+ - RestAssured
+ - TestNG
+ - JSON in Java
 
 Contributors: 
  - DAM VIET ANH - 20204627
