@@ -1,6 +1,11 @@
 # AutoTestRestfulAPI
 This project written by Java is OOP-project to perform automated testing restfulAPI provided 
-
+Contributors: 
+ - DAM VIET ANH - 20204627
+ - VU VIET ANH
+ - NGUYEN TRAN DANG DUONG
+ - NGUYEN QUANG THANG
+ - CHIEN
 The base API is set in urlHelper package, you will see it: "https://auctions-app-2.herokuapp.com/"
 Project is divided into 5 package:
  - apihelper: consist of java-code files to help automatic test (mainly for re-usable testing)
