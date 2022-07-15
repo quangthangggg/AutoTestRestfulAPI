@@ -19,11 +19,12 @@ Contributors:
 
 The base API is set in urlHelper package, you will see it in that file: https://auctions-app-2.herokuapp.com/
 
-Project is divided into 5 package:
+Project (src/main) is divided into 6 package:
  - apihelper: consist of java-code files to help automatic test (mainly for re-usable testing)
  - apitest: for testing
  - menuhelper: provide code for display menu
  - mainmenu: main file
  - urlhelper: provide code for url like setting BASE URL
+ - randomhelper: provide some random class to help testing
  
  The list and description of API provided in: https://docs.google.com/spreadsheets/d/1ULH9Bn_NWvMQO7Em0FPJFWykGcwoicfZvvSOsQxLzW8/edit
