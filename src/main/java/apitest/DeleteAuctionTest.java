@@ -160,8 +160,4 @@ public class DeleteAuctionTest {
 		}
 	}
 	
-	public static void main(String[] args) {
-		DeleteAuctionTest a = new DeleteAuctionTest();
-		a.chooseTest("4");
-	}
 }

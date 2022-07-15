@@ -10,7 +10,7 @@ public class LoginHelper extends GeneralHelper{
 
 		private String access_token;
 		
-		public JSONObject setAccountObject(String email, String password) {
+		public JSONObject setRequestObject(String email, String password) {
 			JSONObject request = new JSONObject();
 			request.put("email", email);
 			request.put("password", password);
@@ -33,7 +33,7 @@ public class LoginHelper extends GeneralHelper{
 		}
 		
 		public Response getApiResponse(String email, String password) { 
-			JSONObject request = this.setAccountObject(email, password);
+			JSONObject request = this.setRequestObject(email, password);
 			
 			BaseURI baseUri = new BaseURI();
 			RestAssured.baseURI = baseUri.getBaseURI();

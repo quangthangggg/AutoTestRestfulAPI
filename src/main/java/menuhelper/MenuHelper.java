@@ -1,5 +1,6 @@
 package menuhelper;
 
+import java.lang.ProcessHandle.Info;
 import java.util.Scanner;
 
 import apitest.*;
@@ -119,6 +120,12 @@ public class MenuHelper {
 					selectMode = this.select();
 					DeleteAuctionTest delAuction = new DeleteAuctionTest();
 					delAuction.chooseTest(selectMode);
+					break;			
+			case "14":
+					System.out.println("Run all or some tests, 0 for all-mode and other number for others (i for i-th test)");
+					selectMode = this.select();
+					InfoAuctionTest infoAuction = new InfoAuctionTest();
+					infoAuction.chooseTest(selectMode);
 					break;
 			case "18":
 					System.out.println("Run all or some tests, 0 for all-mode and other number for others (i for i-th test)");
@@ -186,8 +193,12 @@ public class MenuHelper {
 					SearchTest search = new SearchTest();
 					search.chooseTest(selectMode);
 					break;
+//			case "42":
+//					System.out.println("Run all or some tests, 0 for all-mode and other number for others (i for i-th test)");
+//					selectMode = this.select();
+//					RateTest rate = new RateTest();
+//					rate.chooseTest(selectMode);
+//					break;
 			}
-			
-			
-		}
+	}
 }
