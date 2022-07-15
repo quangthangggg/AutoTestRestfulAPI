@@ -17,7 +17,8 @@ Contributors:
  - NGUYEN QUANG THANG
  - CHIEN
 
-The base API is set in urlHelper package, you will see it: https://auctions-app-2.herokuapp.com/
+The base API is set in urlHelper package, you will see it in that file: https://auctions-app-2.herokuapp.com/
+
 Project is divided into 5 package:
  - apihelper: consist of java-code files to help automatic test (mainly for re-usable testing)
  - apitest: for testing
